@@ -11,5 +11,5 @@ class User(models.Model):
     email = models.EmailField(max_length=128)
     phone_number = models.CharField(max_length=64)
 
-    def __str__(self):
-        return f'{self.fist_name} {self.last_name}'
+#     def __str__(self):
+#         return f'{self.fist_name} {self.last_name}'
