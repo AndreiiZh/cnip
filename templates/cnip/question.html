@@ -1,0 +1,109 @@
+{% extends 'cnip/base.html'%}
+{% block content %}
+
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+<!--{# Load CSS and JavaScript #}-->
+<!--{% bootstrap_css %}-->
+<!--{% bootstrap_javascript jquery='full' %}-->
+
+<!--{# Display django.contrib.messages as Bootstrap alerts #}-->
+<!--{% bootstrap_messages %}-->
+
+{% load staticfiles %}
+
+
+<style>
+<!--    body {-->
+<!--            background-color: #FFFFE0-->
+<!--        }-->
+    .form-row {
+        margin-top: 2rem;
+     }
+
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    h4, address {
+        margin-top: 5rem;
+        margin-left: 5.5rem;
+
+    }
+
+
+
+
+
+</style>
+<h4>Заповніть форму і ми зв'яжемося з вами</h4>
+<div class="container">
+    <form method="post" class="form-signin"> {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+               {% bootstrap_field form.fist_name size='small' show_label=False placeholder='Ваше імʼя'  %}
+            </div>
+            <div class="form-group col-md-6">
+                {% bootstrap_field form.last_name size='small' show_label=False placeholder='Ваше призвище'  %}
+            </div>
+             <div class="form-group col-md-6">
+                {% bootstrap_field form.phone_number size='small' show_label=False placeholder='Ваш номер телефону'  %}
+            </div>
+             <div class="form-group col-md-6">
+                {% bootstrap_field form.email size='small' show_label=False placeholder='Ваша електронна адреса'  %}
+            </div>
+             <div class="form-group col-md-6">
+<!--                {% bootstrap_label "Ваше питання" %}-->
+                {% bootstrap_field form.question show_label=False size='small' placeholder='Введить ваше питання'  %}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Відправити</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+<!--<div class="container">-->
+<!--    <form method="post" class="form-signin"> {% csrf_token %}-->
+<!--        <div class="form-row">-->
+<!--            <div class="form-group col-md-6">-->
+<!--                 <label>Ім'я</label>-->
+<!--                {{ form.fist_name }}-->
+<!--                <input type="text" class="form-control form-control-sm" placeholder="">-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-6">-->
+<!--                 <label>Призвище</label>-->
+<!--                 <input type="text" class="form-control form-control-sm" placeholder="">-->
+<!--                {{ form.last_name }}-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-6">-->
+<!--                <label>Телефон</label>-->
+<!--                 {{ form.phone_number }}-->
+<!--                <input type="text" class="form-control form-control-sm" placeholder="">-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-6">-->
+<!--                <label>Електронна почта</label>-->
+<!--                {{ form.email }}-->
+<!--                <input type="text" class="form-control form-control-sm" placeholder="">-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-12">-->
+<!--                 <label>Питання</label>-->
+<!--                {{ form.question }}-->
+<!--                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <button type="submit" class="btn btn-primary">Відправити</button>-->
+<!--    </form>-->
+<!--</div>-->
+
+
+
+{% endblock content %}

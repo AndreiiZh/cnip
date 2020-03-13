@@ -1,96 +1,147 @@
-<!doctype html>
-<html lang="en">
+{% extends 'cnip/base.html'%}
+{% block content %}
+{% load staticfiles %}
+<!-- Page Content -->
+<style>
+    h3 {
+        margin-top: 1rem;
+        margin-left: 14rem
+    }
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>ЦНИП</title>
-    <style>
+</style>
 
-    </style>
 
-</head>
-<body>
-<!-- Navigation -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Центр надання юридичних послуг</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="cnip/about.html">О нас</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="services.html">Услуги</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Контракти</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Portfolio
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                        <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Blog
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-                        <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-                        <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Other Pages
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                        <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-                        <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                        <a class="dropdown-item" href="faq.html">FAQ</a>
-                        <a class="dropdown-item" href="404.html">404</a>
-                        <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-                    </div>
-                </li>
-            </ul>
+<div class="container">
+<!-- Heading Row -->
+    <div class="row align-items-center my-5">
+        <div class="col-lg-6 mt-5">
+            <img src="{% static 'img/place_hold.jpg' %}" class="img-fluid rounded mb-4 mb-lg-0"  alt>
         </div>
+        <div class="col-lg-6">
+            <h1 class="font-weight-light">Business Name or Tagline</h1>
+            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+            <a class="btn btn-primary" href="{% url 'user:question' %}">Отримати консультацію</a>
+        </div>
+        <h3>Надійна юридична допомога в будь-якій життєвій ситуації</h3>
+        <div class="row mt-3">
+             <div class="col-md-4 mb-5">
+                 <div class="card h-100">
+                     <div class="card-body">
+                        <h2 class="card-title">Підприємцям</h2>
+                          <p class="card-text">Підтримка вашого бізнесу (консультація, підготовка документів, отримання дозвільної документації та представництво інтересів):</p>
+                          <ul>
+                              <li>податки</li>
+                              <li>ліцензії</li>
+                              <li>документи</li>
+                              <li>юрист на аутсорс</li>
+                          </ul>
+                     </div>
+                     <div class="card-footer">
+                        <a href="service/id2" class="btn btn-primary btn-sm">Детальніше</a>
+                     </div>
+                 </div>
+             </div>
+      <!-- /.col-md-4 -->
+             <div class="col-md-4 mb-5">
+                  <div class="card h-100">
+                      <div class="card-body">
+                          <h2 class="card-title">Іноземцям в Україні</h2>
+                          <p class="card-text">Допомога іноземним громадянам в Україні з актуальних правових питань:</p>
+                          <ul>
+                              <li>оформлення посвідки на проживання, громадянство</li>
+                              <li>консультація з сімейних питань</li>
+                              <li>допомога підприємцям</li>
+                              <li>складання та аналіз договорів</li>
+                              <li>інші правові питання</li>
+                          </ul>
+                      </div>
+                      <div class="card-footer">
+                          <a href="service/id3" class="btn btn-primary btn-sm">Детальніше</a>
+                      </div>
+                  </div>
+             </div>
+      <!-- /.col-md-4 -->
+             <div class="col-md-4 mb-5">
+                 <div class="card h-100">
+                     <div class="card-body">
+                          <h2 class="card-title">Сімейний юрист</h2>
+                          <p class="card-text">Професійна юридична допомога у вирішенні сімейних питань:</p>
+                          <ul>
+                              <li>розлучення</li>
+                              <li>аліменти</li>
+                              <li>спадок</li>
+                              <li>майно</li>
+                              <li>діти</li>
+                          </ul>
+                     </div>
+                     <div class="card-footer">
+                          <a href="service/id4" class="btn btn-primary btn-sm">Детальніше</a>
+                     </div>
+                 </div>
+             </div>
+      <!-- /.col-md-4 -->
+             <div class="col-md-4 mb-5">
+                 <div class="card h-100">
+                     <div class="card-body">
+                        <h2 class="card-title">Регістраційні послуги</h2>
+                          <p class="card-text">Швидкі та якісні регістраційні послуги будь-якого характеру:</p>
+                          <ul>
+                              <li>підготовка документів для реєстрації юридичних осіб, фізичних осіб підприємців, реєстрація в ЦНАП</li>
+                              <li>внесення змін в Статутні документи</li>
+                              <li>отримання ліцензій, сертифікатів та іншої дозвільної документації</li>
+                              <li>інші послуги</li>
+                          </ul>
+                     </div>
+                     <div class="card-footer">
+                        <a href="service/id1" class="btn btn-primary btn-sm">Детальніше</a>
+                     </div>
+                 </div>
+             </div>
+      <!-- /.col-md-4 -->
+             <div class="col-md-4 mb-5">
+                  <div class="card h-100">
+                      <div class="card-body">
+                          <h2 class="card-title">Послуги адвоката</h2>
+                          <p class="card-text">Професійний захист ваших інтересів:</p>
+                          <ul>
+                              <li>представництво в судах</li>
+                              <li>підготовка процесуальних документів</li>
+                              <li>стягнення заборгованності</li>
+                              <li>cупровід процесу виконання рішення</li>
+                              <li>адвокатський запит</li>
+                              <li>зберігання документів</li>
+                          </ul>
+                      </div>
+                      <div class="card-footer">
+                          <a href="service/id5" class="btn btn-primary btn-sm">Детальніше</a>
+                      </div>
+                  </div>
+             </div>
+      <!-- /.col-md-4 -->
+             <div class="col-md-4 mb-5">
+                 <div class="card h-100">
+                     <div class="card-body">
+                          <h2 class="card-title">Нерухомість</h2>
+                          <p class="card-text">Юридичні послуги у сфері нерухомості та будівництва:</p>
+                          <ul>
+                              <li>оформлення права власності</li>
+                              <li>супроводження угод купівлі-продажу</li>
+                              <li>оренда</li>
+                              <li>перепланування</li>
+                              <li>дозвіл на будівництво</li>
+                              <li>виготовлення технічного паспорту</li>
+                          </ul>
+                     </div>
+                     <div class="card-footer">
+                          <a href="service/id6" class="btn btn-primary btn-sm">Детальніше</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
     </div>
-</nav>
-<!-- Navigation end -->
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+</div>
+<!-- Page Content end -->
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'cnip/base.html'%}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+{% block content %}
+<style>
+    #service {
+        margin-top: 5.5rem;
+    }
+
+</style>
+
+
+<div class="container" id="service">
+    <div class="row">
+        <div class="col-lg-3">
+            <h3>Категорії послуг</h3>
+            <div class="list-group">
+                {% for i in category_list %}
+
+                <a href="{% url 'user:service' %}">{{ i.service }}</a>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}
+</html>

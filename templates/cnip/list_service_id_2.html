@@ -1,0 +1,31 @@
+{% extends 'cnip/base.html'%}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<style>
+
+
+    h3 {
+        margin-top: 5rem;
+        margin-left: 2rem;
+    }
+
+</style>
+
+
+<h3>Підприємцям</h3>
+
+{% for listservice in object_list %}
+
+<ul>
+    <li>{{ listservice.title }} - {{ listservice.price }} грн. </li>
+</ul>
+{% endfor %}
+
+<a class="btn btn-primary ml-4 mb-5" href="{% url 'user:question' %}">Отримати консультацію</a>
+
+
+{% endblock content %}

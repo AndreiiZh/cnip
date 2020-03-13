@@ -1,3 +1,11 @@
-import test_work
+from typing import TypedDict
 
-help(test_work.dog)
+
+class Person(TypedDict):
+    id: int
+    name: str
+
+
+p = Person(id=1, name='Вася')
+
+print(p)
